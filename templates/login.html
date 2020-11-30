@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<title>Book Catalogue Login</title> 
+		<style>body
+		{
+			margin: 0;
+			padding: 0;
+			background-color: #0033CC;
+			font-family: Arial;
+		}
+		.login{
+			width: 382px;  
+			margin: auto;  
+			margin: 20 0 0 450px;  
+			padding: 80px;  
+			background: white;  
+			border-radius: 15px ; 
+		}
+			
+		 h2{  
+				text-align: center;  
+				color: white;  
+				padding: 20px;  
+			}  
+		label{  
+			color: #0033CC;  
+			font-size: 17px;  
+		}  
+		#Uname{  
+			width: 300px;  
+			height: 30px;  
+			border: none;  
+			border-radius: 3px;  
+			padding-left: 8px;  
+		}  
+		#Pass{  
+			width: 300px;  
+			height: 30px;  
+			border: none;  
+			border-radius: 3px;  
+			padding-left: 8px;  
+			  
+		}  
+		#log{  
+			width: 300px;  
+			height: 30px;  
+			border: none;  
+			border-radius: 17px;  
+			padding-left: 7px;  
+			color: #0033CC;  
+		  
+		  
+		}  
+		span{  
+			color: white;  
+			font-size: 17px;  
+		}  
+		a{  
+			float: right;  
+			background-color: grey;  
+		}  
+
+		</style>
+		   
+		   
+		<body>    
+			<h2>Book Catalogue User Login</h2><br>    
+			<div class="login">    
+			<form action="/login" id="login" method="post" >    
+				<label><b>User Name     
+				</b>    
+				</label>    
+				<input type="text" name="username" id="username">    
+				<br><br>    
+				<label><b>Password     
+				</b>    
+				</label>    
+				<input type="passw" name="passw" id="passw">    
+				<br><br>    
+				<input type="submit" name="login" id="login" value="Log In">  
+				{% if wrong_creds %}<p>Wrong username and/or password, please try again</p>{% endif %}    
+				<br><br>    
+			</form>     
+		</div>    
+		</body>    
+		</html>
+	</body>
+</html>

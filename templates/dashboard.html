@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	<style>body
+	{  
+		margin: 0;  
+		padding: 0;  
+		background-color: #0033CC;
+		font-family: Arial;  
+	}   
+			 
+		#books {
+
+			font-family: Arial, sans-serif;
+			border-collapse: collapse;
+			width: 200px;  
+			margin-left: auto;
+			margin-right: auto;  
+			padding: 50px;  
+			background: #0033CC;;
+			color: white;  
+			border-radius: 5px ;
+		}
+
+		#books td, #books th {
+
+			border: 1px solid #0033CC;
+
+			padding: 80px;
+
+		}
+
+
+		#books tr:hover {background-color: black;}
+
+		#books th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: auto;
+			background-color: white;
+			color: #0033CC;
+		}
+		</style>
+
+		</head>
+
+		<body>
+		<table id="books">
+
+			<tr>
+				<th>Title</th>
+				<th>Authors</th>
+				<th>Page Count</th>
+				<th>Average Rating</th>
+				<th>User ID</th>
+
+			</tr>
+			<tr>
+					{% for v,w,x,y,z in book_rows %}
+								<tr><td>{{v}}</td><td>{{w}}</td><td>{{x}}</td><td>{{y}}</td><td>{{z}}</td>
+						{% endfor %}
+						</tr>
+			
+			</table>
+		   
+			<style>body 
+			{  
+					margin: 20;  
+					padding: 20;  
+					font-family: Arial;  
+				}   
+			.book_add{
+
+						font-family: Arial, sans-serif;
+						border-collapse: collapse;
+						width: 382px;  
+						margin-left: auto;
+						margin-right: auto;  
+						padding: 80px;  
+						background: #0033CC;;
+						color: white;  
+						border-radius: 15px ;
+					}
+					.book_delete{
+
+								font-family: Arial, sans-serif;
+								border-collapse: collapse;
+								width: 382px;  
+								margin-left: auto;
+								margin-right: auto;  
+								padding: 80px;  
+								background: #0033CC;
+								color: white;  
+								border-radius: 15px ;
+							}
+					h2{  
+							text-align: center;  
+							color: white;  
+							padding: 20px;  
+						}  
+						label{  
+							color: black;  
+							font-size: 17px;  
+						}  
+						#isbn_title{  
+							width: 300px;  
+							height: 30px;  
+							border: none;  
+							border-radius: 3px;  
+							padding-left: 8px;  
+						}  
+												span{  
+							color: white;  
+							font-size: 32px;  
+						}  
+						a{  
+							float: right;  
+							background-color: grey;  
+						}
+						</style>
+						<div class="book_add">
+						<h2>Add a Book</h2><br>    
+							
+							<form action="/submit" id="book" method="post" >    
+									<label><b>ISBN Number or Title    
+									</b>    
+									</label>    
+									<input type="text" name="isbn_title">    
+									<br><br>    
+									<input type="submit" name="books" id="books" value="Add a Book"> 
+									   <br><br>    
+								</form> 
+								<div class="book_delete">
+							<p>Delete a title from your catalogue:</p>
+							<form action="/delete" id="book_delete" method="post">
+							<label><b>Enter title to delete:</b></label><input type="text" name="delete_book"></input>
+							<input type="submit" value="Delete Title">
+							</form>
+ 
+
+	</body>
+</html>
